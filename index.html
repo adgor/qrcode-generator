@@ -46,12 +46,13 @@
           </div>
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="relative pt-10">
-            <div class="mx-auto px-6 lg:px-8 flex  justify-center text-center">
-                                <div>
+            <div class="mx-auto px-6 lg:px-8 flex-row space-y-4 justify-center text-center">
+                                              <div id="qrcode" class=" flex justify-center text-center"></div>
                                     
-              <div id="qrcode" class=""></div>
-                                    <a class="pt-6" id="downloadLink" download="qrcode.png" style="display: none;">Download QR Code</a>
-                                </div>
+                                    <div class=" pt-2">
+                                        
+                                    <a class="" id="downloadLink" download="qrcode.png" style="display: none;">Download QR Code</a>
+                                    </div>
             </div>
           </div>
         </div>
@@ -66,8 +67,8 @@
         text: "",
         // width: 128,
         // height: 128,
-        width: "400",
-        height: "400",
+          // width: `100%`,
+        // height: 100%,
 
         colorDark: "#000000",
         colorLight: "#ffffff",
