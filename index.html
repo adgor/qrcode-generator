@@ -45,16 +45,23 @@
             </div>
           </div>
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="relative pt-16">
-            <div class="mx-auto px-6 lg:px-8 flex justify-center text-center">
+          <div class="relative pt-10">
+            <div class="mx-auto px-6 lg:px-8 flex  justify-center text-center">
+                                <div>
+                                    
               <div id="qrcode" class=""></div>
+                                    <a class="pt-6" id="downloadLink" download="qrcode.png" style="display: none;">Download QR Code</a>
+                                </div>
             </div>
           </div>
         </div>
       </main>
     </div>
 
-    <script type="text/javascript">
+
+
+
+        <script type="text/javascript">
       var qrcode = new QRCode(document.getElementById("qrcode"), {
         text: "",
         // width: 128,
@@ -67,11 +74,22 @@
         correctLevel: QRCode.CorrectLevel.H,
       });
 
-      function generateQR() {
-        var text = document.getElementById("website");
-        qrcode.clear();
-        qrcode.makeCode(text.value);
-      }
+       function generateQR() {
+            var text = document.getElementById("website");
+            qrcode.clear(); 
+            qrcode.makeCode(text.value);
+            var canvas = document.querySelector('#qrcode > canvas');
+            var imgDataUrl = canvas.toDataURL();
+            var downloadLink = document.getElementById('downloadLink');
+            downloadLink.href = imgDataUrl;
+            downloadLink.style.display = 'block';
+        }
+      
+      // function generateQR() {
+      //   var text = document.getElementById("website");
+      //   qrcode.clear();
+      //   qrcode.makeCode(text.value);
+      // }
     </script>
   </body>
 </html>
